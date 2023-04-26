@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { GameContext } from '../context/GameContext'
 
-export const IntroText = () => {
+export const Engine = () => {
   const {isStarted, setStart, setScore, score, setGoLeft} = useContext(GameContext)
   useEffect(()=>{
     window.addEventListener("keydown", handleStart)
