@@ -1,0 +1,64 @@
+*{
+    box-sizing: border-box; /*padding and border are included in width and height*/
+    user-select: none;  /*decise whether element can be selected/highlighted*/
+}
+
+body {
+    margin: 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;  /* items in flex container are centered vertically */
+    min-height: 100vh; /*viewport height*/
+}
+
+.game{
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 200px;
+}
+
+.score {
+    position: absolute;
+    font-size: 5vmin; /*3% viewport min*/
+    right: 1vmin;
+    top: 1vmin;
+    font-weight: bold;
+}
+
+.intro-text {
+    position: absolute;
+    font-size: 5vmin;
+    font-weight: bold;
+    top: 40%; 
+    left: 50%;
+    transform: translate(-50%, -50%); /*go right 50%, up 50% of the element size*/
+}
+
+.ground {
+    --left: 0;  /*javascript variable left is 0 by default*/
+    position: absolute;
+    width: 300%;
+    
+    bottom: 0;
+    /* left: calc(var(--left) * 1%) ground runs from right to left */
+}
+
+.dino {
+    bottom: 0;
+    position: absolute;
+    left: 1%;
+    height: 50%;
+    margin-bottom: 20px;
+    /* --bottom: 0; */
+    /* bottom: calc(var(--bottom) * 1%); dino jumps from bottom up */
+}
+
+.cactus {
+    right: 0;  /*javascript variable left is 0 by default*/
+    position: absolute;
+    left: calc(var(--left) * 1%);  /*cactus runs from right to left*/
+    height: 30%; /*same height as dino*/
+    bottom: 0;  /*touch the ground*/
+    margin-bottom: 20px;
+}
