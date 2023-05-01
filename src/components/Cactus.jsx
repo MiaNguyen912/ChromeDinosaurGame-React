@@ -11,7 +11,7 @@ export const Cactus = () => {
   useEffect(()=>{
     if(isStarted){
       goLeft<=830 && setGoLeft(prevGoLeft => prevGoLeft+0.05)
-      if(goLeft>=730 && goLeft<=820 && !jump){
+      if(goLeft>=(window.innerWidth-100) && goLeft<(window.innerWidth-25) && !jump){
         setDead(true)
         alert('Your Score: ' + score);
 
